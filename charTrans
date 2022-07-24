@@ -1,0 +1,41 @@
+#include <iostream>
+
+char ToLower(char upperCase) {
+	int Trans = upperCase;
+	Trans = Trans + 32;
+	std::cout << "입력하신 문자의 소문자는 " << (char)Trans << " 입니다.\n";
+	return 0;
+}
+char ToUpper(char lowerCase) {
+	int Trans = lowerCase;
+	Trans = Trans - 32;
+	std::cout << "입력하신 문자의 대문자는 " << (char)Trans << " 입니다.\n";
+	return 0;
+}
+
+int main() {
+	char InputChar = 0;
+	std::cout << "소문자를 입력하세요.\n";	
+	
+	while (1) {
+		std::cin >> InputChar;
+		int Check = InputChar;
+		if (97 <= Check && Check <= 122) { break; }
+		std::cout << "입력하신 문자는 소문자가 아닙니다. 소문자를 다시 입력하세요.\n";
+	}
+	ToUpper(InputChar); 
+	
+	std::cout << "\n";
+	std::cout << "대문자를 입력하세요.\n";
+	
+	while (1) {
+		std::cin >> InputChar;
+		int Check = InputChar;
+		if (65 <= Check && Check <= 90) { break; }
+		std::cout << "입력하신 문자는 대문자가 아닙니다. 대문자를 다시 입력하세요.\n";
+	}
+	ToLower(InputChar);	
+
+	std::cin.get();
+	return 0;
+}
